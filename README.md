@@ -25,29 +25,29 @@ Tarif Pajak yang ditetapkan atas penghasilan diatur dalam Undang Undang PPh Paal
 1. Input Penghasilan bruto
 2. Jika bruto lebih kecil samadengan 50 jt, maka :
    
-   `pajakLimaPersen = 50jt x 5%;
-   pajak =  pajakLimaPersen`
+       pajakLimaPersen = 50jt x 5%;
+       pajak =  pajakLimaPersen
 
 3. Tapi jika bruto diatas 50jt dan dibawah sama dengan 250jt, maka :
 
-   `pajakLimaPersen = 50jt x 5%;
-   pajakLimaBelasPersen = (bruto - 50jt) x 15%;
-   pajak = pajakLimaPersen + pajakLimaBelasPersen`
+       pajakLimaPersen = 50jt x 5%;
+       pajakLimaBelasPersen = (bruto - 50jt) x 15%;
+       pajak = pajakLimaPersen + pajakLimaBelasPersen
 
 4. Tapi jika bruto diatas 250jt dan dibawah sama dengan 500jt, maka :
 
-   `pajakLimaPersen = 50jt x 5%;
-   pajakLimaBelasPersen = (bruto - 250jt) x 15%;
-   pajakDuaLimaPersen = (bruto - ( bruto -250jt - 50jt)) x 0.25;
-   pajak = pajakLimaPersen + pajakLimaBelasPersen + pajakDuaLimaPersen`
+       pajakLimaPersen = 50jt x 5%;
+       pajakLimaBelasPersen = (bruto - 250jt) x 15%;
+       pajakDuaLimaPersen = (bruto - ( bruto -250jt - 50jt)) x 0.25;
+       pajak = pajakLimaPersen + pajakLimaBelasPersen + pajakDuaLimaPersen
 
 5. Terakhir, jika bruto diatas 500jt, maka :
 
-   `pajakLimaPersen = 50jt x 5%;
-   pajakLimaBelasPersen = (bruto - 250jt) x 15%;
-   pajakDuaLimaPersen = (bruto - ( bruto - 500jt)) x 0.25;
-   pajakTigaPuluh = (bruto - (bruto - ( bruto - 500jt))) x 0.3;
-   pajak = pajakLimaPersen + pajakLimaBelasPersen + pajakDuaLimaPersen + pajakTigaPuluh`
+       pajakLimaPersen = 50jt x 5%;
+       pajakLimaBelasPersen = (bruto - 250jt) x 15%;
+       pajakDuaLimaPersen = (bruto - ( bruto - 500jt)) x 0.25;
+       pajakTigaPuluh = (bruto - (bruto - ( bruto - 500jt))) x 0.3;
+       pajak = pajakLimaPersen + pajakLimaBelasPersen + pajakDuaLimaPersen + pajakTigaPuluh
 
 6. Hasil Pendapatan menjadi,
 
