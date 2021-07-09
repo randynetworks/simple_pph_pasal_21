@@ -17,30 +17,29 @@ Total Hadiah ::<p id="result"></p>
     let calc = document.getElementById("calc")
     let pajak = document.getElementById("pajak")
     let result = document.getElementById("result")
-    let pajakLima = 50000000 * 0.05, pajakLimaBelas,pajakDuaLima, pajakTigaPuluh,pajakAkhir
-
+    let pajakLima = 50000000 * 0.05, pajakLimaBelas = 0,pajakDuaLima  = 0 , pajakTigaPuluh = 0, cetakPajak, pajakAkhir
 
     calc.addEventListener("click", () => {
         let hadiah = parseInt(input.value)
-        if (hadiah <= 50000000) {
-            pajakAkhir = hadiah * 0.05
-            pajak.innerHTML = `Pajak 5% = ${pajakAkhir}`
-        } else if (hadiah <= 250000000) {
-            pajakLimaBelas = (hadiah - 50000000) * 0.15; // misal 60.000.000 - 50.000.000 = 10.000000
-            pajakAkhir = pajakLima + pajakLimaBelas
-            pajak.innerHTML = `Pajak 5% = ${pajakLima} | Pajak 15% = ${pajakLimaBelas} | total Pajak = ${pajakAkhir}`
-        } else if (hadiah <= 500000000) {
+        if ( hadiah <= 50000000 ) {
+            pajakLima = hadiah * 0.05
+            cetakPajak = `Pajak 5% = ${pajakLima}`
+        } else if ( hadiah <= 250000000 ) {
+            pajakLimaBelas = (hadiah - 50000000) * 0.15;
+            cetakPajak = `Pajak 5% = ${pajakLima} | Pajak 15% = ${pajakLimaBelas}`
+        } else if ( hadiah <= 500000000 ) {
             pajakLimaBelas = (hadiah - 250000000) * 0.15
             pajakDuaLima = (hadiah - (hadiah - 250000000 - 50000000)) * 0.25
-            pajakAkhir = pajakLima + pajakLimaBelas + pajakDuaLima
-            pajak.innerHTML =  `Pajak 5% = ${pajakLima} | Pajak 15% = ${pajakLimaBelas} | Pajak 25% = ${pajakDuaLima} | total Pajak = ${pajakAkhir}`
-        } else if (hadiah > 500000000) {
+            cetakPajak = `Pajak 5% = ${pajakLima} | Pajak 15% = ${pajakLimaBelas} | Pajak 25% = ${pajakDuaLima}`
+        } else if ( hadiah > 500000000 ) {
             pajakLimaBelas = (hadiah - 500000000) * 0.15
             pajakDuaLima = (hadiah - (hadiah - 500000000)) * 0.25
-            pajakTigaPuluh =  (hadiah - (hadiah - (hadiah - 500000000))) * 0.3
-            pajakAkhir = pajakLima + pajakLimaBelas + pajakDuaLima + pajakTigaPuluh
-            pajak.innerHTML =  `Pajak 5% = ${pajakLima} | Pajak 15% = ${pajakLimaBelas} | Pajak 25% = ${pajakDuaLima} | Pajak 30% = ${pajakTigaPuluh} | total Pajak = ${pajakAkhir}`
+            pajakTigaPuluh = (hadiah - (hadiah - (hadiah - 500000000))) * 0.3
+            cetakPajak = `Pajak 5% = ${pajakLima} | Pajak 15% = ${pajakLimaBelas} | Pajak 25% = ${pajakDuaLima} | Pajak 30% = ${pajakTigaPuluh}`
         }
+
+        pajakAkhir = pajakLima + pajakLimaBelas + pajakDuaLima + pajakTigaPuluh
+        pajak.innerHTML = `${cetakPajak} | total Pajak = ${pajakAkhir}`
         result.innerHTML = hadiah - pajakAkhir
     })
 </script>
